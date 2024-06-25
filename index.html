@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Math for kids</title>
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+      ul{
+         list-style-type: none;
+         margin-right: 30px; 
+         display: flex;
+         
+      }
+      .operation{
+        display: block;
+         margin-right: 20px;
+         font-weight: 900;
+         cursor: pointer;
+      }
+
+      .navbar{
+         position: relative;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         height: 60px;
+         background-color: red;
+         color: white;
+      }
+      h1{
+         margin-left: 30px;
+      }
+      span{
+         color: white;
+         text-decoration: none;
+         display: block;
+         font-family: sans-serif;
+      }
+      span:hover{
+         text-shadow: 20svw;
+         text-decoration: underline;
+      }
+      .hero{
+         height: 500px;
+         width: 100%;
+        margin: 5px;
+      }
+      .option-container{
+      display: flex;
+      flex-direction: column;
+      
+      }
+      .options{
+         width: 100%;
+         height: 33%;
+         margin-bottom: 3px;
+         font-size: 100px;
+         font-weight: 900;
+         color: rgb(6, 8, 111);
+         border-radius: 6px;
+      }
+      #operation-container{
+         font-size: 100px;
+         font-weight: 900;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         display: flex;
+         color:rgb(26, 93, 216);
+         justify-content: center;
+         align-items: center;
+      }
+      .option1{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .option2{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .option3{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+   </style>
+</head>
+<body>
+   <div class="navbar">
+      <h1>Math 4 Kids</h1>
+      <ul>
+         <li class="operation"> <span onclick="addition()">Add</span></li>
+         <li class="operation"> <span onclick="subtraction()">subtract</span></li>
+         <li class="operation"> <span onclick="multiply()">multiply</span></li>
+         <li class="operation"> <span onclick="division()">divide</span></li>
+       
+      </ul>
+   </div>
+   <div class="hero">
+      <div id="operation-container" style="height: 100%; width: 75% ;float: left; margin-right: 5px;">0+0=?</div>
+      <div class="option-container"  style="height: 100%; width: 24%; float: left; margin-left: 0;">
+      <div class="option1 options " style="background-color: red;" >0</div>
+      <div class="option2 options" style="background-color: rgb(18, 178, 241);">0</div>
+      <div class="option3 options" style="background-color: yellow;">0</div>
+   </div>
+
+   <script>
+      
+       var result;
+       function generateRandomNumber(){
+        return (Math.floor(Math.random()*100));
+      }
+      function generateRandomNumber2(){
+        return (Math.floor(Math.random()*100));
+      }
+      var index=document.getElementsByClassName("options");
+      function addition(){
+         var randomNumber=generateRandomNumber();
+         var randomNumber2=generateRandomNumber2();
+         result=randomNumber+randomNumber2;
+         result=Math.floor(result);
+         document.getElementById("operation-container").innerHTML=randomNumber+"+"+randomNumber2+"=?";
+         for(var i=0;i<index.length;i++){
+            index[i].innerHTML=generateRandomNumber();      
+      }
+      var some=Math.floor(Math.random()*index.length);
+      var newresult=index[some];
+      newresult.innerHTML=result;
+      index[Math.floor(Math.random()*index.length)]=result;
+         newresult.addEventListener("click",addition);
+      // var newresult=index[Math.floor(Math.random()*index.length)];
+      // newresult.innerHTML=result;
+      // index[Math.floor(Math.random()*index.length)]=result;
+      // newresult.addEventListener("click",addition);
+      
+   }
+      function subtraction(){
+         var randomNumber=generateRandomNumber();
+         var randomNumber2=generateRandomNumber2();
+         result=randomNumber-randomNumber2;
+         result=Math.floor(result);
+         document.getElementById("operation-container").innerHTML=randomNumber+"-"+randomNumber2+"=?";
+         for(var i=0;i<index.length;i++){
+            index[i].innerHTML=generateRandomNumber();      
+      }
+      var some=Math.floor(Math.random()*index.length);
+      var newresult=index[some];
+      newresult.innerHTML=result;
+      index[Math.floor(Math.random()*index.length)]=result;
+         newresult.addEventListener("click",subtraction);
+      // var newresult=index[Math.floor(Math.random()*index.length)];
+      // newresult.innerHTML=result;
+      // index[Math.floor(Math.random()*index.length)]=result;
+      // newresult.addEventListener("click",subtraction);
+      }  
+      function multiply(){
+         var randomNumber=generateRandomNumber();
+         var randomNumber2=generateRandomNumber2();
+         result=randomNumber*randomNumber2;
+         result=Math.floor(result);
+         document.getElementById("operation-container").innerHTML=randomNumber+"*"+randomNumber2+"=?";
+         for(var i=0;i<index.length;i++){
+            index[i].innerHTML=generateRandomNumber();      
+      }
+      var some=Math.floor(Math.random()*index.length);
+      var newresult=index[some];
+      newresult.innerHTML=result;
+      index[Math.floor(Math.random()*index.length)]=result;
+         newresult.addEventListener("click",multiply);
+      // var newresult=index[Math.floor(Math.random()*index.length)];
+      // newresult.innerHTML=result;
+      // index[Math.floor(Math.random()*index.length)]=result;
+      // newresult.addEventListener("click",multiply);
+      }
+      function division(){
+         var p=0;
+         var randomNumber=generateRandomNumber();
+         var randomNumber2=generateRandomNumber2();
+         result=randomNumber;
+         result=Math.floor(result);
+         document.getElementById("operation-container").innerHTML=randomNumber*randomNumber2+"/"+randomNumber2+"=?";
+         for(var i=0;i<index.length;i++){
+            index[i].innerHTML=generateRandomNumber();      
+      }
+      var some=Math.floor(Math.random()*index.length);
+      var newresult=index[some];
+       var newHtml=newresult.innerHTML=result;
+      index[Math.floor(Math.random()*index.length)]=result;
+      // if(newHtml==result){
+         
+            newresult.addEventListener("click",division);
+         
+            for(var i=0;i<index.length;i++){
+               
+               if(i!=some){
+                  index[i].addEventListener("click",function(){
+                     
+          var audio=new Audio("./sounds/mixkit-classic-alarm-995.wav");
+           audio.play();
+           let x = document.getElementsByTagName("BODY")[0];
+           x.style.backgroundColor="black";
+          setTimeout(function() {
+            x.style.backgroundColor="";
+          },5000);
+          
+          
+         //   document.getElementsByClassName("opertion")[0].style.backGroundColor="#000000";
+         //   setInterval(function(){
+       
+         //   },100);
+         //  });
+               // }
+           
+         });
+         
+         
+      }
+            
+         
+           
+     
+            }
+      // }
+//       else{
+//          for(var i=0;i<index.length;i++){
+//       
+//    }
+//       }
+   }
+         // newresult.addEventListener("click",function(){
+         //    if(newHtml==result){
+         //       p=1;
+         //       division();
+             
+         //    }
+          
+//             {
+// var audio=new Audio("./sounds/mixkit-classic-alarm-995.wav");
+// audio.play();
+//                return;
+//             }
+           
+      //    });
+      // }
+    
+  
+   
+
+
+
+   //    for( var j=0;j<index.length;j++){
+   //       index[j].addEventListener("click",function(){
+   //    for(var i=0;i<index.length;i++){
+   //          index[i].innerHTML=generateRandomNumber(); 
+   //    }
+   //    for(var k=0;k<index.length;k++){
+   //       var newRandomNumber=Math.floor(Math.random()*index.length-1);
+   //       index[newRandomNumber].innerHTML=result;
+   //    }
+   //  });
+   //    }
+    
+    
+     
+   </script>
+</body>
+</html>
